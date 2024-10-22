@@ -1,0 +1,72 @@
+Build Tool (Maven)
+
+Build tool automates the process of compiling the code (.java -> .class) , packaging to Jar/war/ear, running unit test cases and managing dependencies.
+
+We have 3 build tools available = maven, gradle, ant
+
+JDK = JRE + Compiler
+JRE = JVM
+JVM = Interpreter
+
+rt.jar has been provided along with JDK -> java.lang, java.util, java.io, java.math
+
+Calculator - Addition, multiplication , division , etc.
+
+Can we export the data to excel file (Microsoft). Apache poi
+
+20 java file  -> 20 class file -> we zip it to Jar file
+2000 java file -> 2000 class file -> we zip it to jar file
+4000 java file -> 4000 class file -> we zip it to jar file
+
+
+JAR -> Java Archive (Java file + jar) -> reusable to some other project
+WAR -> Web Archive / Web Application Archive (Java + HTML + CSS + JS + jar) -> we deploy it to web server (tomcat)
+EAR -> Enterprise archive -> Multiple Module (multiple Jar + War file) -> we deploy to application server (JBOSS/Weblogic)
+
+——————————————————————————————————
+Maven Project —> Git —> Jenkins (CI/CD) (build + deployment)
+——————————————————————————————————
+Maven
+———-
+Maven is a build tool which helps to build java projects.
+
+Features of maven ->
+
+1. Dependency management
+2. Build lifecycle
+3. plugin
+4. pom.xml (Project Object Model) - it is the main configuration file that we provide to a project. Where we mention about project configuration, dependency management and plugin
+
+Maintain a project directory
+
+project_name
+		— src
+			— main
+					— java (java source code)
+					— resource (resource file like properties file)
+			— test
+					— java (test code)
+		— pom.xml
+---------------------------------------------
+pom.xml -
+    Heart of maven project, contains all the information of domain, group,
+    project management, dependency management and plugin.
+
+    groupId - provide domain name of the organization for
+              which we are creating the project. And make it unique
+              from other organization project.
+    artifactId - Is the name of project. under same group id we can have
+                multiple but unique artifact or project id
+    version - which maintain project version.
+
+    ** SNAPSHOT will never create a new version it will always overwrite the
+    existing jar file. But if we have version mentioned that needs to be changed
+    while rebuilding.
+
+    FirstMaven-1.0-SNAPSHOT.jar
+    FirstMaven-1.0.jar
+    FirstMaven-2.0.jar
+---------------------------------------------
+dependency Management:
+---------------------
+dependency on the external library of your project. apache poi
