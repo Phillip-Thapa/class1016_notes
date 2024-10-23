@@ -1,6 +1,7 @@
 Build Tool (Maven)
 
-Build tool automates the process of compiling the code (.java -> .class) , packaging to Jar/war/ear, running unit test cases and managing dependencies.
+Build tool automates the process of compiling the code (.java -> .class) ,
+packaging to Jar/war/ear, running unit test cases and managing dependencies.
 
 We have 3 build tools available = maven, gradle, ant
 
@@ -70,3 +71,48 @@ pom.xml -
 dependency Management:
 ---------------------
 dependency on the external library of your project. apache poi
+---------------------
+3 types of repository for maven:
+--------------------------------
+1. Central - https://mvnrepository.com
+2. Local - .m2 folder under your local user
+3. Remote - which is located in organizations remote location
+
+Any new dependency been added:
+1. first ity will search in local repo(.m2)
+2. if not found in local then go to central (https://mvnrepository.com)
+3. if not found in central then go to remote.
+
+** .m2 folder(local repo) where library can be store life
+-long time unless we are removing manually.
+
+--------------------------------
+Maven Build Lifecycle:
+---------------------
+1. Clean - standard lifecycle, where we are cleaning the existing
+           packages and build. This works on the project level.
+           Local repo (.m2) folder level this does not work.
+2. validate - scan the entire project and validate the project
+            information is accurate or not.
+3. compile - where source code compiled and .class file get created.
+4. test - Run unit test cases of the project.
+5. package - This step helps to package the jar/war/ear file
+6. verify - verify whether the criteria for maven has met.
+7. install = (validate + compile + test + package + verify)
+        along with it will help to publish to local (.m2) repo.
+8. site - where project documentation, matrics
+        and report get created. (code coverage with
+        jcoco plugin/sonarqube)
+9. deploy - copy the final jar file to the remote location
+        and deploy to server.
+
+----------------------------------------------
+build profile: help us to segregate the different environment that
+    we need to work on. And we can perform operation based on the profile.
+----------------------------------------------
+plugins:
+it helps to perform all the required task that maven does perform.
+
+1. Build Plugin - Clean, compiler, deploy, install, jar, resource, site, surefire
+2. Report plugin - jcoco plugin/ sonerqube
+

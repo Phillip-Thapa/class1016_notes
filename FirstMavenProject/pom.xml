@@ -6,7 +6,9 @@
 
     <groupId>org.zorba</groupId>
     <artifactId>FirstMavenProject</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>2.3-SNAPSHOT</version>
+    <!-- By default the package would be jar -->
+    <packaging>jar</packaging>
 
     <properties>
         <maven.compiler.source>19</maven.compiler.source>
@@ -37,4 +39,29 @@
         </dependency>
 
     </dependencies>
+
+    <!--Remote repo url-->
+<!--    <repositories>-->
+<!--        <repository>-->
+<!--            <url></url>-->
+<!--        </repository>-->
+<!--    </repositories>-->
+
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <build></build>
+            <reporting></reporting>
+        </profile>
+        <profile>
+            <id>test</id>
+            <build></build>
+            <reporting></reporting>
+        </profile>
+        <profile>
+            <id>prod</id>
+            <build></build>
+            <reporting></reporting>
+        </profile>
+    </profiles>
 </project>
