@@ -1,0 +1,16 @@
+File part of java.io package.
+File path should be absolute / relative path.
+absolute path - where we provide the full directory path of a file along with /.
+        (prefer '/' over '\' to eliminate the escape character issues)
+relative path - not providing the full directory where the file is staying. Rather
+        we will be proving ../file_name.txt, here .. perform search operation over the
+        present directory or the parent directory.
+
+Input stream to read the content from file, whereas OutputStream to write back to file.
+FileInputStream - is the basic stream used to read the raw bytes from a file.
+            It reads data directly from file with read() method. It is making slower
+            while reading large file.
+BufferedInputStream - it wrapper under FileInputStream, it improve the performance of the stream.
+            It buffered the entire large data to memory and then it make it works.
+
+
